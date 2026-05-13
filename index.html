@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Eneye Raji | HR Professional & Executive Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A0;
+    --gold-dark: #8A6B1F;
+    --charcoal: #1C1C1C;
+    --charcoal-mid: #2E2E2E;
+    --off-white: #F7F4EE;
+    --muted: #6B6557;
+    --accent: #2C4A3E;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(247,244,238,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--charcoal);
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6rem 4rem 4rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: linear-gradient(135deg, var(--accent) 0%, #1a3530 100%);
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--gold-dark); color: #fff; }
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    border: 1.5px solid var(--charcoal);
+  }
+  .btn-outline:hover { background: var(--charcoal); color: var(--off-white); }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; gap: 1.2rem;
+    padding: 2rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.5rem;
+    color: #fff;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 0.2rem; }
+  .hero-name-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .hero-location { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+
+  /* SECTIONS */
+  section { padding: 5rem 4rem; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+  h2 span { color: var(--gold); }
+
+  /* ABOUT */
+  .about { background: #fff; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+  .pillars { display: flex; flex-direction: column; gap: 1rem; }
+  .pillar {
+    background: var(--off-white);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem;
+    border-radius: 0 0.35rem 0.35rem 0;
+  }
+  .pillar h4 {
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+  .pillar p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* EXPERIENCE */
+  .experience { background: var(--charcoal); color: #fff; }
+  .experience h2 { color: #fff; }
+  .experience .section-label { color: var(--gold-light); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(201,168,76,0.3);
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -2rem;
+    top: 0.35rem;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--charcoal);
+    transform: translateX(-4px);
+  }
+  .timeline-period {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+  .timeline-company {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+  .timeline-list { list-style: none; }
+  .timeline-list li {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .timeline-list li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+  }
+
+  /* SKILLS */
+  .skills { background: var(--off-white); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-cat {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .skill-cat h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    font-size: 0.8rem;
+    background: var(--off-white);
+    color: var(--charcoal-mid);
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* EDUCATION */
+  .education { background: #fff; }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .edu-card {
+    background: var(--off-white);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border-top: 3px solid var(--gold);
+  }
+  .edu-year { font-size: 0.75rem; color: var(--gold-dark); font-weight: 600; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .edu-inst { font-size: 0.85rem; color: var(--muted); }
+
+  /* CONTACT */
+  .contact { background: var(--accent); color: #fff; text-align: center; }
+  .contact h2 { color: #fff; margin-bottom: 1rem; }
+  .contact .section-label { color: rgba(201,168,76,0.8); }
+  .contact-sub { font-size: 1rem; color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0.35rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+  .contact-link:hover { background: var(--gold); border-color: var(--gold); color: var(--charcoal); }
+  .contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  footer {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; }
+    .hero::before { display: none; }
+    .hero-visual { background: var(--accent); border-radius: 0.5rem; }
+    section { padding: 3.5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Samuel<span>.</span>Raji</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1>
+      Human Resources
+      <em>&amp; Executive Support</em>
+      Professional
+    </h1>
+    <p class="hero-sub">
+      Building efficient HR systems, elevating team performance, and aligning people strategy with business goals — across hospitality, logistics, construction, and fashion production industries.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      <a href="#experience" class="btn btn-outline">View Experience</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <p class="hero-name-large">Samuel Eneye Raji</p>
+    <p class="hero-location">📍 Abuja, Nigeria &nbsp;·&nbsp; Open to Remote</p>
+    <div style="height: 1px; background: rgba(201,168,76,0.2); margin: 0.5rem 0;"></div>
+    <div class="stat-card">
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years of HR Experience</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div>
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Employees Supported in Payroll</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div>
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Roles Successfully Recruited</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div>
+        <div class="stat-num">80%</div>
+        <div class="stat-label">Employee Conflicts Resolved Independently</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">Who I Am</div>
+  <h2>People-first. <span>Results-driven.</span></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a dynamic and goal-oriented Human Resources professional with experience spanning hospitality, logistics, construction, and fashion production industries. I'm known for building efficient HR systems, boosting employee morale, and aligning HR strategy with business goals.
+      </p>
+      <p>
+        Currently contributing to structure, staffing, and operational excellence at Couture Living IVÓ in Abuja, where I spearhead HR structure creation and departmental coordination for a growing fashion and retail brand.
+      </p>
+      <p>
+        Beyond HR, I bring strong executive support capabilities — managing travel logistics, stakeholder communications, calendars, and administrative workflows with precision and professionalism.
+      </p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h4>Talent Acquisition</h4>
+        <p>End-to-end recruitment across technical and non-technical roles, with a strong track record of reducing time-to-hire.</p>
+      </div>
+      <div class="pillar">
+        <h4>HR Operations</h4>
+        <p>Employee lifecycle management, payroll processing, KPI tracking, documentation, and compliance.</p>
+      </div>
+      <div class="pillar">
+        <h4>Executive Support</h4>
+        <p>Stakeholder correspondence, travel coordination, workflow automation using Google Workspace tools.</p>
+      </div>
+      <div class="pillar">
+        <h4>Conflict Resolution</h4>
+        <p>Skilled at de-escalating employee disputes and creating resolution strategies that protect business continuity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-label">Career Journey</div>
+  <h2>Professional <span>Experience</span></h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-period">May 2025 – Present</div>
+      <div class="timeline-role">HR/Admin & Project Coordinator</div>
+      <div class="timeline-company">Couture Living Limited · Abuja, Nigeria</div>
+      <ul class="timeline-list">
+        <li>Spearheaded HR structure creation and departmental coordination for a growing fashion and retail brand.</li>
+        <li>Recruited and managed support teams including Tailors, Cutters, Virtual Assistants, and Project Support Staff.</li>
+        <li>Developed salary structures aligned with industry benchmarks and internal performance reviews.</li>
+        <li>Streamlined requisition and approval workflows using Google Forms, Sheets, and email automation.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">July 2024 – November 2024</div>
+      <div class="timeline-role">Human Resources Officer</div>
+      <div class="timeline-company">Amber-Tone Logistics Ltd (Zotmann Intl Ltd) · Ebonyi State, Nigeria</div>
+      <ul class="timeline-list">
+        <li>Managed complete employee lifecycle including recruitment, onboarding, documentation, and exit procedures.</li>
+        <li>Developed and maintained the HR database for all field and administrative staff.</li>
+        <li>Supported compliance with safety and labour regulations during mining operations.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">April 2024 – July 2024</div>
+      <div class="timeline-role">Human Resources Assistant</div>
+      <div class="timeline-company">Amber-Tone Logistics Ltd (Formerly Palladium Mining Ltd) · Ebonyi State</div>
+      <ul class="timeline-list">
+        <li>Assisted in recruitment for over 50 roles, significantly reducing time-to-hire through effective candidate sourcing and screening.</li>
+        <li>Acted as first point of contact for employee enquiries, resolving over 80% of conflicts independently.</li>
+        <li>Processed payroll for over 150 employees, identifying and correcting discrepancies to reduce errors.</li>
+        <li>Supported the performance appraisal process with timely evaluation submissions and detailed reports.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item" style="padding-bottom: 0;">
+      <div class="timeline-period">April 2023 – March 2024</div>
+      <div class="timeline-role">Secretary to Zonal Manager</div>
+      <div class="timeline-company">Bank of Agriculture (South East Zonal Office) · Enugu State, Nigeria</div>
+      <ul class="timeline-list">
+        <li>Served as first point of contact for client inquiries and government agency visitations.</li>
+        <li>Managed comprehensive travel logistics including transportation, hotel bookings, and itinerary planning for the Zonal Manager.</li>
+        <li>Administered bookkeeping functions and ensured accurate completion of all administrative paperwork.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label">Capabilities</div>
+  <h2>Skills & <span>Competencies</span></h2>
+  <div class="skills-grid">
+    <div class="skill-cat">
+      <h4>HR Core</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Recruitment</span>
+        <span class="skill-tag">Onboarding</span>
+        <span class="skill-tag">Payroll Processing</span>
+        <span class="skill-tag">Performance Appraisal</span>
+        <span class="skill-tag">Employee Relations</span>
+        <span class="skill-tag">HR Documentation</span>
+        <span class="skill-tag">Exit Management</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>Admin & Executive Support</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Travel Coordination</span>
+        <span class="skill-tag">Itinerary Planning</span>
+        <span class="skill-tag">Bookkeeping</span>
+        <span class="skill-tag">Stakeholder Comms</span>
+        <span class="skill-tag">Calendar Management</span>
+        <span class="skill-tag">Report Writing</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>Tools & Technology</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Microsoft Office Suite</span>
+        <span class="skill-tag">Google Forms</span>
+        <span class="skill-tag">Google Sheets</span>
+        <span class="skill-tag">Email Automation</span>
+        <span class="skill-tag">Data Analytics</span>
+        <span class="skill-tag">45 WPM Typing</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h4>Soft Skills</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Conflict Resolution</span>
+        <span class="skill-tag">Public Speaking</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Team Player</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <div class="section-label">Academic Background</div>
+  <h2>Education & <span>Certifications</span></h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">2023</div>
+      <div class="edu-degree">B.Sc. Economics</div>
+      <div class="edu-inst">Federal University Lokoja · Kogi State, Nigeria</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2024</div>
+      <div class="edu-degree">Certificate of National Service</div>
+      <div class="edu-inst">NYSC · Enugu State, Nigeria</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2024</div>
+      <div class="edu-degree">Certificate of Proficiency in HR Management</div>
+      <div class="edu-inst">LLBS · Enugu, Nigeria</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2023</div>
+      <div class="edu-degree">Proficiency Certificate in Risk & Asset Management</div>
+      <div class="edu-inst">LLBS · Enugu, Nigeria</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Let's Connect</div>
+  <h2>Open to New <span style="color: var(--gold);">Opportunities</span></h2>
+  <p class="contact-sub">
+    Whether you need an HR professional, an executive assistant, or a reliable operational partner — I'd love to hear from you.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:sammraji@gmail.com" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      sammraji@gmail.com
+    </a>
+    <a href="tel:+2349035267226" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      +234 9035 267 226
+    </a>
+    <a href="https://www.linkedin.com/in/samuel-raji" class="contact-link" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/SydneySam116" class="contact-link" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub Portfolio
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Samuel Eneye Raji · HR Professional & Executive Assistant · Abuja, Nigeria
+</footer>
+
+</body>
+</html>
